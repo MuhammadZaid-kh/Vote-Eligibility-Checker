@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote age check</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .main{
+            border: 1px solid #ccc;
+            width: 90%;
+            max-width: 300px;
+            padding: 20px;
+            margin: 20px auto;
+        }
+        input {
+            border-radius: 12px;
+            padding-left: 5px;
+            border: 1px solid #ccc;
+        }
+        button{
+            border-radius: 12px;
+            background: slateblue;
+            color: white;
+            border: none;
+        }
+        #result{
+            font-size: 12px;
+            color: blue;
+            font-family: monospace;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h3>Vote eligiblity check</h3>
+        <input type ="text" id="userInput" placeholder="Enter your age">
+        <button onclick="myFun()">Check</button>
+        <div id="result"></div>
+    </div>
+  
+  
+  <script>
+function myFun(){
+    let userIn = document.getElementById("userInput").value;
+    let userResults = document.getElementById("result");
+ if(userIn >= 100){
+     userResults.innerHTML = "⚠️ Error! enter your correct age " ;
+     userResults.style.color = "red";
+ }  
+else if(userIn >= 18) {
+    userResults.innerHTML = "You are <mark>eligible</mark> <br> You can vote!";
+} else{
+    userResults.innerHTML = "You are <mark>Not</mark> eligible <br> You can't vote!";
+}
+}
+  </script>
+  
+</body>
+</html>
